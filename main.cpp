@@ -2,7 +2,7 @@
 using namespace std;
 const int LENGTH = 5;
 void Increment(int* inc);
-
+void IncrementArray(int *inc);
 
 
 int main()
@@ -52,12 +52,26 @@ int main()
 
     cout << "value of i is: " << i << endl;
     cout << "value of the value living at address pi is: " << *pi << endl;  // *pi displays value at that address
+    IncrementArray(iarr);
+    for (int i = 0; i < LENGTH; i++)
+    {
+        cout << iarr[i] << endl;
+    }
 
 
     return 0;
 }
 
 void Increment(int *inc)
+{
+    for (int i = 0; i < LENGTH; i++)
+    {
+        *inc++ += 1;    // Points at the element of the array
+    }
+
+
+}
+void IncrementArray(int *inc)
 {
     *inc += 1;
 }
